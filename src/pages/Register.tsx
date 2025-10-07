@@ -26,7 +26,7 @@ const Register: React.FC = () => {
   return (
     <Box className="flex justify-center items-center h-screen"
         sx={{
-        backgroundImage: 'url("/src/assets/loginbg.jpg")', // path to your image
+        backgroundImage: 'url("/loginbg.jpg")', // path to your image
         backgroundSize: "cover",        // ensures image covers container without stretching
         backgroundPosition: "center",   // centers the image
         backgroundRepeat: "no-repeat",  // prevent tiling 
@@ -149,3 +149,4 @@ const Register: React.FC = () => {
 };
 
 export default Register;
+
