@@ -21,12 +21,11 @@ const Dashboard: React.FC = () => {
 
       <BinanceProvider>
         <div className="flex flex-row justify-between p-1 gap-1">
-          {/* Live ticks grid */}
           <div className="flex-1 overflow-hidden h-[450px] bg-gray-800 shadow-md p-1">
             <Outlet />
           </div>
 
-          {/* Candlestick chart */}
+          {/* Tab Pane */}
           <div className="flex flex-row justify-between bg-gray-800  w-[600px] h-[450px]  shadow-md p-2">
             <Tab.Group className="flex-1 flex flex-col">
               {/* Tabs */}
@@ -36,8 +35,8 @@ const Dashboard: React.FC = () => {
                     classNames(
                       "w-full py-2.5 text-sm font-medium leading-5 text-black",
                       selected
-                        ? "bg-yellow-400 shadow"
-                        : "text-gray-200 hover:bg-yellow-400 hover:text-black"
+                        ? "bg-yellow-500 shadow"
+                        : "text-gray-200 hover:bg-yellow-500 hover:text-black"
                     )
                   }
                 >
@@ -48,8 +47,8 @@ const Dashboard: React.FC = () => {
                     classNames(
                       "w-full py-2.5 text-sm font-medium leading-5 text-black",
                       selected
-                        ? "bg-yellow-400 shadow"
-                        : "text-gray-200 hover:bg-yellow-400 hover:text-black"
+                        ? "bg-yellow-500 shadow"
+                        : "text-gray-200 hover:bg-yellow-500 hover:text-black"
                     )
                   }
                 >

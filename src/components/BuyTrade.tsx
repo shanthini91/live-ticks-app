@@ -53,7 +53,7 @@ const updated = [
         elevation={6}
         className="p-6 w-[750px] h-[500px] !bg-gray-800 text-white rounded-xl shadow-lg"
       >
-        <Typography align="center" className="text-white text-sm" gutterBottom>
+        <Typography align="center" className="text-yellow-500 text-sm" gutterBottom>
           Buy Crypto
         </Typography>
 

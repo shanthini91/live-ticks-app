@@ -72,7 +72,7 @@ const handleSell = () => {
         elevation={6}
         className="p-6 w-[750px] !bg-gray-800 text-white rounded-xl shadow-lg"
       >
-        <Typography className="text-white text-sm" align="center" gutterBottom>
+        <Typography className="text-yellow-500 text-sm" align="center" gutterBottom>
           Sell Crypto
         </Typography>
 

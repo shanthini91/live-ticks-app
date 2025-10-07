@@ -1,14 +1,30 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useEffect, useRef } from "react";
 import { AgGridReact } from "ag-grid-react";
 import { ModuleRegistry, AllCommunityModule, type ColDef } from "ag-grid-community";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import { useBinance, type Trade } from "../context/BinanceSocketContext";
 
-// Register modules
 ModuleRegistry.registerModules([AllCommunityModule]);
 
 const BinanceGrid: React.FC = () => {
   const { ticks } = useBinance();
+
+  // Throttled state
+  const [displayTicks, setDisplayTicks] = useState<Trade[]>([]);
+  const ticksRef = useRef<Trade[]>([]);
+
+  // Save incoming ticks to ref (fast updates)
+  useEffect(() => {
+    ticksRef.current = ticks;
+  }, [ticks]);
+
+  // Update displayTicks every 500ms (or whatever interval)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDisplayTicks([...ticksRef.current]);
+    }, 5000); // 500ms update interval
+    return () => clearInterval(interval);
+  }, []);
 
   const columnDefs: ColDef<Trade>[] = useMemo(
     () => [
@@ -41,16 +57,16 @@ const BinanceGrid: React.FC = () => {
   );
 
   return (
-    <div className="ag-theme-material w-full h-[350px]  shadow-md border custom-scrollbar border-gray-900">
+    <div className="ag-theme-material w-full h-[350px] shadow-md border custom-scrollbar border-gray-900">
       <AgGridReact<Trade>
-        className=" bg-gray-800"
-        rowData={ticks}
+        className="bg-gray-800"
+        rowData={displayTicks} // <- use throttled data
         columnDefs={columnDefs}
         defaultColDef={{ flex: 1, minWidth: 100 }}
         animateRows
         pagination
         paginationPageSize={10}
-        getRowId={(params) => params.data.id} // unique ID
+        getRowId={(params) => params.data.id}
         getRowClass={(params) => params.data?.rowClass || ""}
       />
     </div>
