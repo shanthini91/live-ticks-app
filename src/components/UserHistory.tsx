@@ -39,7 +39,7 @@ export default function UserHistory() {
     >
       <Typography
         align="center"
-        className="text-yellow-500 py-3 text-sm !bg-gray-800"
+        className="text-yellow-500 pt-3 text-sm !bg-gray-800"
         gutterBottom
       >
         Login / Logout History
@@ -82,3 +82,4 @@ sx={{
     </Paper>
   );
 }
+
