@@ -7,12 +7,16 @@ import AreaChart from "./chart/AreaChart";
 import MultiLineChart from "./chart/MultiLineChart";
 import LineBarChart from "./chart/LineBarChart";
 import PieChart from "./chart/PieChart";
+import HeatMapChart from "./chart/HeatMapChart";
 import DashboardLayout from "./layout/DashboardLayout";
 import NewsPage from "./pages/NewsPage";
 import AccountPage from "./pages/AccountPage";
 import ChartPage from "./pages/ChartPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import MyTrades from "./components/MyTrades";
+import BuyTrade from "./components/BuyTrade";
+import SellTrade from "./components/SellTrade";
 
 const App: React.FC = () => {
   return (
@@ -36,10 +40,14 @@ const App: React.FC = () => {
               <Route path="account" element={<AccountPage />} />
               <Route path="chart" element={<ChartPage />} />
               <Route path="news" element={<NewsPage />} />
+              <Route path="trades/mytrades" element={<MyTrades />} />
               <Route path="charts/area" element={<AreaChart />} />
               <Route path="charts/pie" element={<PieChart />} />
               <Route path="charts/linebar" element={<LineBarChart />} />
               <Route path="charts/multiline" element={<MultiLineChart />} />
+              <Route path="charts/heatmap" element={<HeatMapChart />} />
+              <Route path="trades/buy" element={<BuyTrade />} />
+              <Route path="trades/sell" element={<SellTrade />} />
             </Route>
 
             {/* Redirect unknown paths to login */}

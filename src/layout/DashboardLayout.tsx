@@ -5,7 +5,8 @@ import CandlestickChart from "../chart/CandlestickChart";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { Tab } from "@headlessui/react";
-import Footer from "../components/Footer"
+import UserHistory from "../components/UserHistory";
+import Footer from "../components/Footer";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -70,7 +71,7 @@ const Dashboard: React.FC = () => {
         </div>
       </BinanceProvider>
       <div className="px-1">
-        <Footer />
+        <UserHistory />
       </div>
     </div>
   );

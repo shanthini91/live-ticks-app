@@ -1,17 +1,24 @@
+// src/pages/Login.tsx
 import React, { useState } from "react";
-import { Box, Button, TextField, Typography, Paper } from "@mui/material";
+import { Box, Button, TextField, Typography, Paper, Alert } from "@mui/material";
 import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const Login: React.FC = () => {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email && password) {
-      localStorage.setItem("user", email);
-      navigate("/chart");
+    const success = login(email, password);
+    if (success) {
+      navigate("/chart"); // redirect to dashboard
+    } else {
+      setError("Invalid email or password");
     }
   };
 
@@ -24,34 +31,26 @@ const Login: React.FC = () => {
         <Typography variant="h5" align="center" gutterBottom>
           Login
         </Typography>
-        <form onSubmit={handleLogin}>
+
+        {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
+
+        <form onSubmit={handleLogin} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <TextField
             label="Email"
             type="email"
-            fullWidth
-            margin="normal"
+            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            InputProps={{ className: "text-white" }}
-            InputLabelProps={{ className: "text-gray-300" }}
           />
           <TextField
             label="Password"
             type="password"
-            fullWidth
-            margin="normal"
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            InputProps={{ className: "text-white" }}
-            InputLabelProps={{ className: "text-gray-300" }}
           />
 
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            className="!mt-4 !bg-gray-800 hover:!bg-gray-900"
-          >
+          <Button type="submit" variant="contained" className="!mt-4 !bg-gray-800 hover:!bg-gray-900">
             Login
           </Button>
 

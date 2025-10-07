@@ -16,6 +16,14 @@ body {
   --ag-header-background-color: #1f2937; /* Tailwind bg-gray-800 (optional) */
   --ag-foreground-color: #f9fafb; /* Tailwind text-gray-50 */
 }
+
+.data-grid-dark .MuiDataGrid-columnHeaders,
+.data-grid-dark .MuiDataGrid-columnHeader {
+  background-color: #1f2937 !important; /* bg-gray-800 */
+  color: #f9fafb !important; /* text-gray-50 */
+}
+
+
 /* Custom scrollbar for NewsPage */
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
