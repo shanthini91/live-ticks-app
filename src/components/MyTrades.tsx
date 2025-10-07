@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Box, Typography, Paper } from "@mui/material";
 import { DataGrid, type GridColDef } from "@mui/x-data-grid";
 import { useAuth } from "../context/AuthContext";
@@ -57,9 +57,8 @@ export default function MyTrades() {
         className="w-[750px] h-[450px] max-w-4xl !bg-gray-800 text-white shadow-lg rounded-xl"
       >
         <Typography
-          variant="h5"
           align="center"
-          className="text-white py-3 !bg-gray-800"
+          className="text-white py-3 text-sm !bg-gray-800"
           gutterBottom
         >
           My Trades

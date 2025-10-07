@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Paper,
-  Box,
   Typography,
   Select,
   MenuItem,
@@ -73,7 +72,7 @@ const handleSell = () => {
         elevation={6}
         className="p-6 w-[750px] !bg-gray-800 text-white rounded-xl shadow-lg"
       >
-        <Typography variant="h5" className="text-white" align="center" gutterBottom>
+        <Typography className="text-white text-sm" align="center" gutterBottom>
           Sell Crypto
         </Typography>
 

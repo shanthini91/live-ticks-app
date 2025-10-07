@@ -101,27 +101,27 @@ const Navbar: React.FC = () => {
                 onClose={handleChartMenuClose}
               >
                 <MenuItem onClick={handleChartMenuClose}>
-                  <NavLink to="/charts/area" className="w-full">
+                  <NavLink to="/charts/area" className="w-full text-xs">
                     Area Chart
                   </NavLink>
                 </MenuItem>
                 <MenuItem onClick={handleChartMenuClose}>
-                  <NavLink to="/charts/multiline" className="w-full">
+                  <NavLink to="/charts/multiline" className="w-full text-xs">
                     Multi-Line Chart
                   </NavLink>
                 </MenuItem>
                 <MenuItem onClick={handleChartMenuClose}>
-                  <NavLink to="/charts/pie" className="w-full">
+                  <NavLink to="/charts/pie" className="w-full text-xs">
                     Pie Chart
                   </NavLink>
                 </MenuItem>
                 <MenuItem onClick={handleChartMenuClose}>
-                  <NavLink to="/charts/linebar" className="w-full">
+                  <NavLink to="/charts/linebar" className="w-full text-xs">
                     Line Bar Chart
                   </NavLink>
                 </MenuItem>
                 <MenuItem onClick={handleChartMenuClose}>
-                  <NavLink to="/charts/heatmap" className="w-full">
+                  <NavLink to="/charts/heatmap" className="w-full text-xs">
                     Heatmap Chart
                   </NavLink>
                 </MenuItem>
@@ -155,17 +155,17 @@ const Navbar: React.FC = () => {
                 onClose={handleTradeMenuClose}
               >
                 <MenuItem onClick={handleTradeMenuClose}>
-                  <NavLink to="/trades/mytrades" className="w-full">
+                  <NavLink to="/trades/mytrades" className="w-full text-xs">
                     My Trades
                   </NavLink>
                 </MenuItem>
                 <MenuItem onClick={handleTradeMenuClose}>
-                  <NavLink to="/trades/buy" className="w-full">
+                  <NavLink to="/trades/buy" className="w-full text-xs">
                     Buy Trade
                   </NavLink>
                 </MenuItem>
                 <MenuItem onClick={handleTradeMenuClose}>
-                  <NavLink to="/trades/sell" className="w-full">
+                  <NavLink to="/trades/sell" className="w-full text-xs">
                     Sell Trade
                   </NavLink>
                 </MenuItem>

@@ -16,7 +16,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     const success = login(email, password);
     if (success) {
-      navigate("/chart"); // redirect to dashboard
+      navigate("/charts/linebar"); // redirect to dashboard
     } else {
       setError("Invalid email or password");
     }

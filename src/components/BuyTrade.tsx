@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import {
   Paper,
-  Box,
   Typography,
   Select,
   MenuItem,
@@ -54,7 +53,7 @@ const updated = [
         elevation={6}
         className="p-6 w-[750px] h-[500px] !bg-gray-800 text-white rounded-xl shadow-lg"
       >
-        <Typography variant="h5" align="center" className="text-white" gutterBottom>
+        <Typography align="center" className="text-white text-sm" gutterBottom>
           Buy Crypto
         </Typography>
 

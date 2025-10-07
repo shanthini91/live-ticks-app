@@ -73,6 +73,9 @@ const Dashboard: React.FC = () => {
       <div className="px-1">
         <UserHistory />
       </div>
+      <div className="px-1">
+        <Footer />
+      </div>
     </div>
   );
 };
